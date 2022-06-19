@@ -1,15 +1,23 @@
 import { Module } from '@nestjs/common';
+import { APP_GUARD } from '@nestjs/core';
+import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { dbConfig } from './configs/db.config';
-import { ConfigModule } from '@nestjs/config';
 import { SecretModule } from './features/secret/secret.module';
+import { AuthGuard } from './guards/auth.guard';
 
 @Module({
   imports: [ConfigModule.forRoot(), TypeOrmModule.forRoot(dbConfig), SecretModule],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: APP_GUARD,
+      useClass: AuthGuard,
+    },
+  ],
 })
 export class AppModule {}

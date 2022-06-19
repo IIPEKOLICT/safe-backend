@@ -8,3 +8,9 @@ export enum EndPoint {
 export enum Selector {
   ID = ':id',
 }
+
+export enum ErrorMessage {
+  UNKNOWN = 'unknown error',
+  UNAUTHORIZED = 'unauthorized error',
+  BAD_REQUEST = 'bad request error',
+}

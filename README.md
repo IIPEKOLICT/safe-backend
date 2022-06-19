@@ -6,6 +6,7 @@
 ### Environment variables
 - `PORT`
 - `DATABASE_URL`
+- `SECRET_KEY` secret key, used for auth
 - `PGSSLMODE` set 'no-verify' for Heroku
 
 ### How to use
