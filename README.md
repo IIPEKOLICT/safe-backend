@@ -6,7 +6,6 @@
 ### Environment variables
 - `PORT`
 - `DATABASE_URL`
-- `BCRYPT_STRENGTH`
 - `PGSSLMODE` set 'no-verify' for Heroku
 
 ### How to use

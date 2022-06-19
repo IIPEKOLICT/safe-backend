@@ -4,3 +4,7 @@ export enum EndPoint {
 
   TEST = 'test',
 }
+
+export enum Selector {
+  ID = ':id',
+}
