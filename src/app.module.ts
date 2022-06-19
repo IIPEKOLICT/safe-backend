@@ -8,9 +8,10 @@ import { AppService } from './app.service';
 import { dbConfig } from './configs/db.config';
 import { SecretModule } from './features/secret/secret.module';
 import { AuthGuard } from './guards/auth.guard';
+import { CardModule } from './features/card/card.module';
 
 @Module({
-  imports: [ConfigModule.forRoot(), TypeOrmModule.forRoot(dbConfig), SecretModule],
+  imports: [ConfigModule.forRoot(), TypeOrmModule.forRoot(dbConfig), SecretModule, CardModule],
   controllers: [AppController],
   providers: [
     AppService,
